@@ -23583,7 +23583,7 @@ inline void RKRGUI::preset_click_i(Fl_Button* o, void*) {
     Fl_Widget *m = fl_message_icon();
     m->parent()->copy_label(rkr->jackcliname);
     sprintf(temp2,"Overwrite \"%s\"?",w->label());
-    ok=fl_choice(temp2, "No","Yes", NULL);
+    ok=fl_choice("%s", temp2, "No", "Yes", NULL);
    if (!ok)
    { 
    o->value(0);
@@ -24850,7 +24850,7 @@ void RKRGUI::is_modified() {
    w->parent()->copy_label(rkr->jackcliname);
    
   
-   ok=fl_choice("Bank was modified, but not saved", "Discard","Save",NULL);
+   ok=fl_choice("%s", "Bank was modified, but not saved", "Discard", "Save", NULL);
   
   
   
@@ -28008,7 +28008,7 @@ inline void RKRGUI::delpreset(Fl_Widget *w, int num) {
   } 
   
   sprintf(temp2,"Delete? \"%s\"",s->text());
-  ok=fl_choice("%d",temp2,"No","Yes",NULL);
+  ok=fl_choice("%s", temp2, "No", "Yes", NULL);
   if (!ok) return;
   memset(Rname,0,sizeof(Rname));
   sprintf(Rname,"%s",s->text());
